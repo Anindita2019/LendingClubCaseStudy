@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "Submission1"
+version = '1.0.0'
+description = "upgrad-Loan Assignment"
+license = "open"
+readme = "README.md"
+homepage = "XXX"
+repository = "XX"
+keywords = ["upgrad",""]
+authors = [" <ranveer2009cse@gmail.com>"]
+
+
+
+[tool.poetry.dependencies]
+python = ">=3.8.0,<=3.9.9"
+numpy = "^1.22.3"
+matplotlib = "^3.4.2"
+pandas = "^1.4.2"
+sklearn = "^0.0"
+seaborn = "^0.11.2"
+openpyxl = "^3.0.10"
+
+[tool.poetry.dev-dependencies]
+pytest-cov = "^2.11.1"
+pytest = "^7.1.1"
+requests = "^2.27.1"
+toml = "^0.10.2"
+nox = "^2022.1.7"
+jupyter = "^1.0.0"
+
+
+[tool.coverage.paths]
+source = ["loan/*","poetry.toml","*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 0
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+lines_after_imports = 2
+lines_between_types = 1
+ensure_newline_before_comments = true
+line_length = 110
+
+[tool.black]
+line_length = 110
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | tests/.*/setup.py
+)/
+'''
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
